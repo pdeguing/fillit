@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    readme.md                                          :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/07/21 14:30:28 by pdeguing          #+#    #+#              #
-#    Updated: 2018/07/21 16:47:34 by pdeguing         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 "Fillit is a project that let you discover and/or familiarize yourself with a recurring
 problematic in programming: searching the optimal solution among a huge set of possibilities,
 in a respectable timing. In this particular project, you will have to find a way to
