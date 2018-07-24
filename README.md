@@ -30,3 +30,8 @@ The smallest square:
 * ('.') does not come in count when placing Tetriminos
 * that's 12 char getting ignored
 * Tetriminos are ordered by their apparition order in the entry file
+
+Max nbr of Tetri = 26
+each Tetri = 20 char in input file
+add \n betwen each -> max 26 - 1 \n (no \n after the last one)
+so the maximum BUF_SIZE we need to read the input file is 26*20+25 = 545
