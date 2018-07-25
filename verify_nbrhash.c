@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit.h                                           :+:      :+:    :+:   */
+/*   verify_nbrhash.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/23 11:47:03 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/07/24 16:39:30 by pdeguing         ###   ########.fr       */
+/*   Created: 2018/07/24 15:31:23 by pdeguing          #+#    #+#             */
+/*   Updated: 2018/07/24 15:35:25 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILLIT_H
-# define FILLIT_H
-# define BUF_SIZE 545
-# include "include/libft.h"
-# include <fcntl.h>
+#include "fillit.h"
 
-char	*get_input(char *name);
+int		verify_nbrhash(char *buf)
+{
+	int		i;
+	int		hash;
+	int		count_line;
 
-int		verify_input(char *buf);
-int		verify_line(char *buf);
-int		verify_char(char *buf);
-int		verify_nbrline(char *buf);
-int		verify_nbrhash(char *buf);
-int		verify_tetro(char *buf);
-
-#endif
+	i = 0;
+	while (buf[i])
+	{
+		hash = 0;
+		count_line = 0;
+		while (count_line < 4 && buf[i])
+		{
+			if (buf[i] == '#')
+				hash++;
+			if (buf[i] == '\n')
+				count_line++;
+			i++;
+		}
+		if (hash != 4)
+			return (0);
+		i++;
+	}
+	return (1);
+}
