@@ -42,5 +42,6 @@ typedef struct		s_tetro
 t_point				*point_new(int x, int y);
 t_tetro				*tetro_new(t_point *p0, t_point *p1, t_point *p2,
 		t_point *p3);
+int				*point_coord(char *buf, int i);
 
 #endif
