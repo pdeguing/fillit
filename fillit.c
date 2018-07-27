@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 11:33:18 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/07/25 16:50:34 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/07/27 10:08:36 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		main(int argc, char **argv)
 
 	if (argc != 2 && !argv)
 		return (0);
-	buf = get_input(argv[2]);
+	buf = get_input(argv[1]);
 	ft_putstr(buf);
 	coord = point_coord(buf, 0);
 	ft_putnbr(coord[0]);
