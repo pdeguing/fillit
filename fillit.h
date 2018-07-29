@@ -46,4 +46,7 @@ int				*point_coord(char *buf, int i);
 t_tetro				*tetro_fill(int *coord);
 t_tetro				**tetro_array(char *buf);
 
+int				get_min(int i, int j, int k, int l);
+int				usage_display(void);
+
 #endif
