@@ -31,9 +31,6 @@ int	*point_coord(char *buf, int i)
 		}
 		x++;
 		i++;
-		ft_putchar('=');
-		ft_putnbr(line_count);
-		ft_putchar('\n');
 	}
 	return (coord);
 }

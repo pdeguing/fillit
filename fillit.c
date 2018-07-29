@@ -14,29 +14,37 @@
 
 int		main(int argc, char **argv)
 {
-	int	*coord;
-	char	*buf;
+	t_tetro		**array;
+	int		i;
 
 	if (argc != 2 && !argv)
 		return (0);
-	buf = get_input(argv[1]);
-	ft_putstr(buf);
-	coord = point_coord(buf, 0);
-	ft_putnbr(coord[0]);
-	ft_putchar('\n');
-	ft_putnbr(coord[1]);
-	ft_putchar('\n');
-	ft_putnbr(coord[2]);
-	ft_putchar('\n');
-	ft_putnbr(coord[3]);
-	ft_putchar('\n');
-	ft_putnbr(coord[4]);
-	ft_putchar('\n');
-	ft_putnbr(coord[5]);
-	ft_putchar('\n');
-	ft_putnbr(coord[6]);
-	ft_putchar('\n');
-	ft_putnbr(coord[7]);
-	ft_putchar('\n');
+	array = tetro_array(get_input(argv[1]));
+	if (!array)
+		ft_putchar('N');
+	i = 0;
+	if (!array[i])
+		ft_putstr("fsociety\n");
+	while (array[i])
+	{
+		ft_putnbr(array[i]->p0->x);
+		ft_putchar('/');
+		ft_putnbr(array[i]->p0->y);
+		ft_putchar(' ');
+		ft_putnbr(array[i]->p1->x);
+		ft_putchar('/');
+		ft_putnbr(array[i]->p1->y);
+		ft_putchar(' ');
+		ft_putnbr(array[i]->p2->x);
+		ft_putchar('/');
+		ft_putnbr(array[i]->p2->y);
+		ft_putchar(' ');
+		ft_putnbr(array[i]->p3->x);
+		ft_putchar('/');
+		ft_putnbr(array[i]->p3->y);
+		ft_putchar('\n');
+		ft_putchar('\n');
+		i++;
+	}
 	return (0);
 }
