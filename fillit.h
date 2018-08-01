@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 11:47:03 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/07/25 16:45:29 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/07/31 20:02:50 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,22 @@ typedef struct		s_tetro
 	t_point			*p3;
 }					t_tetro;
 
+int					*point_coord(char *buf, int i);
 t_point				*point_new(int x, int y);
-t_tetro				*tetro_new(t_point *p0, t_point *p1, t_point *p2,
-		t_point *p3);
-int				*point_coord(char *buf, int i);
+
 t_tetro				*tetro_fill(int *coord);
 t_tetro				**tetro_array(char *buf);
+t_tetro				*tetro_new(t_point *p0, t_point *p1, t_point *p2,
+															t_point *p3);
 
-int				get_min(int i, int j, int k, int l);
-int				usage_display(void);
+int					get_min(int i, int j, int k, int l);
+int					usage_display(void);
+
+int					matrix_minsize(t_tetro **array);
+char				**matrix_create(int size);
+int					in_matrix(int i, int j, t_tetro *tetro, int size);
+
+int					solve(t_tetro **array);
+int					place_tetro(char **matrix, t_tetro *tetro, int size, char letter);
 
 #endif

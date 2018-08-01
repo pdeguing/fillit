@@ -1,48 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   point_coord.c                                      :+:      :+:    :+:   */
+/*   matrix_create.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/31 14:00:00 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/07/31 14:00:02 by pdeguing         ###   ########.fr       */
+/*   Created: 2018/07/31 14:45:26 by pdeguing          #+#    #+#             */
+/*   Updated: 2018/07/31 15:25:42 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int	*point_coord(char *buf, int i)
+char	**matrix_create(int size)
 {
-	int	x;
-	int	y;
-	int	line_count;
-	int	*coord;
-	int	j;
+	char	**matrix;
+	int		i;
+	int		j;
 
-	line_count = 0;
-	x = 0;
-	y = 0;
-	j = 0;
-	if(!(coord = (int *)malloc(sizeof(int) * 8)))
+	matrix = (char **)malloc(sizeof(char *) * (size + 1));
+	if (!matrix)
 		return (NULL);
-	while (buf[i] && line_count < 4)
-	{
-		if (buf[i] == '\n')
+	i = 0;
+	while (i < size)
+	{	
+		matrix[i] = (char *)malloc(sizeof(char) * (size + 1));
+		if (!matrix[i])
+			return (NULL);
+		j = 0;
+		while (j < size)
 		{
-			line_count++;
-			x = x - 5;
-			y++;
-		}
-		if (buf[i] == '#')
-		{
-			coord[j] = x;
-			j++;
-			coord[j] = y;
+			matrix[i][j]= '.';
 			j++;
 		}
-		x++;
+		matrix[i][j] = '\0';
 		i++;
 	}
-	return (coord);
+	matrix[i] = NULL;
+	return (matrix);
 }

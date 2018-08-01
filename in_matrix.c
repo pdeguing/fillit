@@ -1,48 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   point_coord.c                                      :+:      :+:    :+:   */
+/*   in_matrix.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/31 14:00:00 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/07/31 14:00:02 by pdeguing         ###   ########.fr       */
+/*   Created: 2018/07/31 17:53:19 by pdeguing          #+#    #+#             */
+/*   Updated: 2018/07/31 17:58:07 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int	*point_coord(char *buf, int i)
+int		in_matrix(int i, int j, t_tetro *tetro, int size)
 {
-	int	x;
-	int	y;
-	int	line_count;
-	int	*coord;
-	int	j;
-
-	line_count = 0;
-	x = 0;
-	y = 0;
-	j = 0;
-	if(!(coord = (int *)malloc(sizeof(int) * 8)))
-		return (NULL);
-	while (buf[i] && line_count < 4)
-	{
-		if (buf[i] == '\n')
-		{
-			line_count++;
-			x = x - 5;
-			y++;
-		}
-		if (buf[i] == '#')
-		{
-			coord[j] = x;
-			j++;
-			coord[j] = y;
-			j++;
-		}
-		x++;
-		i++;
-	}
-	return (coord);
+	if (i + tetro->p0->y >= size)
+		return (0);
+	if (j + tetro->p0->x >= size)
+		return (0);
+	if (i + tetro->p1->y >= size)
+		return (0);
+	if (j + tetro->p1->x >= size)
+		return (0);
+	if (i + tetro->p2->y >= size)
+		return (0);
+	if (j + tetro->p2->x >= size)
+		return (0);
+	if (i + tetro->p3->y >= size)
+		return (0);
+	if (j + tetro->p3->x >= size)
+		return (0);
+	return (1);
 }

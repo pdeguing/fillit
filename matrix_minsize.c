@@ -1,48 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   point_coord.c                                      :+:      :+:    :+:   */
+/*   matrix_minsize.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/31 14:00:00 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/07/31 14:00:02 by pdeguing         ###   ########.fr       */
+/*   Created: 2018/07/31 14:45:56 by pdeguing          #+#    #+#             */
+/*   Updated: 2018/07/31 16:06:41 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int	*point_coord(char *buf, int i)
+int		matrix_minsize(t_tetro **array)
 {
-	int	x;
-	int	y;
-	int	line_count;
-	int	*coord;
-	int	j;
+	int		i;
 
-	line_count = 0;
-	x = 0;
-	y = 0;
-	j = 0;
-	if(!(coord = (int *)malloc(sizeof(int) * 8)))
-		return (NULL);
-	while (buf[i] && line_count < 4)
-	{
-		if (buf[i] == '\n')
-		{
-			line_count++;
-			x = x - 5;
-			y++;
-		}
-		if (buf[i] == '#')
-		{
-			coord[j] = x;
-			j++;
-			coord[j] = y;
-			j++;
-		}
-		x++;
+	i = 0;
+	while (array[i])
 		i++;
-	}
-	return (coord);
+	return (i * 2);
 }
