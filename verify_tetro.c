@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 15:43:17 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/07/24 16:38:49 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/08/01 13:21:55 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ int		verify_tetro(char *buf)
 			return (0);
 		i++;
 	}
+// add a check if number of links between '#' is >= '6'
 	return (1);
 }
