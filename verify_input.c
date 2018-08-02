@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 14:14:13 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/07/24 16:48:48 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/08/02 09:14:18 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int		verify_input(char *buf)
 	if (!verify_nbrhash(buf))
 		return (0);
 	if (!verify_tetro(buf))
+		return (0);
+	if (!verify_connections(buf))
 		return (0);
 	return (1);
 }

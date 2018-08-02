@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 11:47:03 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/07/31 20:02:50 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/08/02 09:14:19 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int					verify_char(char *buf);
 int					verify_nbrline(char *buf);
 int					verify_nbrhash(char *buf);
 int					verify_tetro(char *buf);
+int					verify_connections(char *buf);
 
 typedef struct		s_point
 {
