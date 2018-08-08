@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 15:15:35 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/07/24 15:17:00 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/08/02 15:26:20 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int		verify_char(char *buf)
 	while (buf[i])
 	{
 		if (buf[i] != '#' && buf[i] != '.' && buf[i] != '\n')
+			return (0);
+		if (ft_strlen(buf) < 20)
 			return (0);
 		i++;
 	}
