@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/31 14:00:23 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/07/31 16:18:17 by pdeguing         ###   ########.fr       */
+/*   Created: 2018/08/02 15:44:27 by pdeguing          #+#    #+#             */
+/*   Updated: 2018/08/02 15:44:37 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_tetro		*tetro_fill(int *coord)
 {
-	t_tetro		*tetro;
+	t_tetro	*tetro;
 	int		min_x;
 	int		min_y;
 

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/31 14:00:00 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/07/31 14:00:02 by pdeguing         ###   ########.fr       */
+/*   Created: 2018/08/02 15:43:36 by pdeguing          #+#    #+#             */
+/*   Updated: 2018/08/02 15:56:58 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,33 +16,27 @@ int	*point_coord(char *buf, int i)
 {
 	int	x;
 	int	y;
-	int	line_count;
 	int	*coord;
 	int	j;
 
-	line_count = 0;
 	x = 0;
 	y = 0;
 	j = 0;
-	if(!(coord = (int *)malloc(sizeof(int) * 8)))
+	if (!(coord = (int *)malloc(sizeof(int) * 8)))
 		return (NULL);
-	while (buf[i] && line_count < 4)
+	while (buf[++i] && y < 4)
 	{
 		if (buf[i] == '\n')
 		{
-			line_count++;
 			x = x - 5;
 			y++;
 		}
 		if (buf[i] == '#')
 		{
-			coord[j] = x;
-			j++;
-			coord[j] = y;
-			j++;
+			coord[j++] = x;
+			coord[j++] = y;
 		}
 		x++;
-		i++;
 	}
 	return (coord);
 }

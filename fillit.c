@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 11:33:18 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/07/31 17:20:03 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/08/08 11:17:38 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,40 +16,16 @@ int		main(int argc, char **argv)
 {
 	char	*buf;
 	t_tetro	**array;
-//	int	i;
 
 	if (argc != 2)
 		return (usage_display());
 	buf = get_input(argv[1]);
 	if (verify_input(buf) == 0)
-		return (usage_display());
-	else
+	{
+		ft_putstr("error\n");
+		return (-1);
+	}
 	array = tetro_array(buf);
-//	i = 0;
-//	while (array[i])
-//	{
-//		ft_putnbr(array[i]->p0->x);
-//		ft_putchar('/');
-//		ft_putnbr(array[i]->p0->y);
-//		ft_putchar(' ');
-//		ft_putnbr(array[i]->p1->x);
-//		ft_putchar('/');
-//		ft_putnbr(array[i]->p1->y);
-//		ft_putchar(' ');
-//		ft_putnbr(array[i]->p2->x);
-//		ft_putchar('/');
-//		ft_putnbr(array[i]->p2->y);
-//		ft_putchar(' ');
-//		ft_putnbr(array[i]->p3->x);
-//		ft_putchar('/');
-//		ft_putnbr(array[i]->p3->y);
-//		ft_putchar(' ');
-//		ft_putchar('\n');
-//		i++;
-//	}
-//	if (array[i] == NULL)
-//		ft_putstr("NULL\n\n");
-	if (solve(array))
-		ft_putstr("Can't solve puzzle\n");
-	return (0);
+	if ((solve(array) == -1))
+		return (0);
 }

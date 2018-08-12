@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/31 14:00:14 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/07/31 16:19:40 by pdeguing         ###   ########.fr       */
+/*   Created: 2018/08/02 15:44:05 by pdeguing          #+#    #+#             */
+/*   Updated: 2018/08/02 15:56:24 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_tetro		**tetro_array(char *buf)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 	t_tetro	**array;
 
 	array = (t_tetro **)malloc(sizeof(t_tetro *) * 27);
@@ -25,7 +25,7 @@ t_tetro		**tetro_array(char *buf)
 	j = 0;
 	while (buf[i])
 	{
-		array[j] = tetro_fill(point_coord(buf, i));
+		array[j] = tetro_fill(point_coord(buf, i - 1));
 		while (buf[i] != '\n' && buf[i])
 		{
 			i++;
@@ -36,5 +36,5 @@ t_tetro		**tetro_array(char *buf)
 		i++;
 	}
 	array[j] = NULL;
-	return (array);	
+	return (array);
 }

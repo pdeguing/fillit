@@ -1,41 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   matrix_create.c                                    :+:      :+:    :+:   */
+/*   verify_max.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/31 14:45:26 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/07/31 15:25:42 by pdeguing         ###   ########.fr       */
+/*   Created: 2018/08/02 19:28:08 by pdeguing          #+#    #+#             */
+/*   Updated: 2018/08/02 19:36:27 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char	**matrix_create(int size)
+int		verify_max(char *buf)
 {
-	char	**matrix;
-	int		i;
-	int		j;
-
-	matrix = (char **)malloc(sizeof(char *) * (size + 1));
-	if (!matrix)
-		return (NULL);
-	i = 0;
-	while (i < size)
-	{	
-		matrix[i] = (char *)malloc(sizeof(char) * (size + 1));
-		if (!matrix[i])
-			return (NULL);
-		j = 0;
-		while (j < size)
-		{
-			matrix[i][j]= '.';
-			j++;
-		}
-		matrix[i][j] = '\0';
-		i++;
-	}
-	matrix[i] = NULL;
-	return (matrix);
+	if (ft_strlen(buf) >= 545)
+		return (0);
+	return (1);
 }

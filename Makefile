@@ -6,13 +6,19 @@
 #    By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/23 12:26:32 by pdeguing          #+#    #+#              #
-#    Updated: 2018/07/23 14:55:02 by pdeguing         ###   ########.fr        #
+#    Updated: 2018/08/02 19:33:38 by pdeguing         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fillit
 CFLAG = -Wall -Wextra -Werror
-SRC = *.c
+SRC = board.c fillit.c get_input.c get_min.c \
+	 	place_tpiece.c point_coord.c point_new.c \
+		recursion.c tetro_array.c tetro_fill.c \
+		tetro_new.c usage_display.c verify_char.c \
+		verify_connections.c verify_input.c \
+		verify_line.c verify_nbrhash.c \
+		verify_nbrline.c verify_tetro.c verify_max.c
 LIB = include/libft.a
 
 all: $(NAME)

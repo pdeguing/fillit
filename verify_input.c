@@ -6,7 +6,7 @@
 /*   By: pdeguing <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 14:14:13 by pdeguing          #+#    #+#             */
-/*   Updated: 2018/08/02 15:18:39 by pdeguing         ###   ########.fr       */
+/*   Updated: 2018/08/02 19:30:21 by pdeguing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int		verify_input(char *buf)
 {
+	if (!verify_max(buf))
+		return (0);
 	if (!verify_line(buf))
 		return (0);
 	if (!verify_char(buf))
